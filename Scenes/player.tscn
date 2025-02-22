@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqao44ob807ml"]
+[gd_scene load_steps=9 format=3 uid="uid://dqao44ob807ml"]
 
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_odprr"]
 [ext_resource type="Texture2D" uid="uid://ukklv8wad5fh" path="res://Assets/sprites/knight.png" id="1_qxe0x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmehy"]
@@ -42,6 +43,7 @@ animations = [{
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_odprr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
