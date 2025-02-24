@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://c28jdbgwd2jyb"]
+[gd_scene load_steps=19 format=3 uid="uid://c28jdbgwd2jyb"]
 
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_7qud5"]
 [ext_resource type="PackedScene" uid="uid://dqao44ob807ml" path="res://Scenes/player.tscn" id="1_cthtt"]
 [ext_resource type="Texture2D" uid="uid://b2yo5wqjco8ph" path="res://Assets/sprites/world_tileset.png" id="2_hsejg"]
 [ext_resource type="PackedScene" uid="uid://cqra76rsboc0v" path="res://Scenes/platform.tscn" id="3_apfgk"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3q3x5njamjq6" path="res://Scenes/killzone.tscn" id="5_mfqgo"]
 [ext_resource type="PackedScene" uid="uid://5n7m2yb8qjtn" path="res://Scenes/slime.tscn" id="6_pt6si"]
 [ext_resource type="FontFile" uid="uid://ck3rssg3klcyb" path="res://Assets/fonts/PixelOperator8.ttf" id="7_nes8f"]
+[ext_resource type="FontFile" uid="uid://d20rxrh66fgge" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="9_fftd8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t54pl"]
 texture = ExtResource("2_hsejg")
@@ -256,6 +258,21 @@ _data = {
 [node name="Game" type="Node2D"]
 position = Vector2(33, 5)
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_7qud5")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 904.0
+offset_top = -27.0
+offset_right = 1059.0
+offset_bottom = -4.0
+scale = Vector2(0.8033, 1.20735)
+theme_override_fonts/font = ExtResource("9_fftd8")
+theme_override_font_sizes/font_size = 8
+text = "You collected x coins!"
+horizontal_alignment = 1
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(15, 3)
 tile_set = SubResource("TileSet_tx3nv")
@@ -347,9 +364,9 @@ theme_override_font_sizes/font_size = 8
 text = "Space to jump."
 
 [node name="Label2" type="Label" parent="Labels"]
-offset_left = 901.0
+offset_left = 904.0
 offset_top = -38.0
-offset_right = 944.0
+offset_right = 947.0
 offset_bottom = -15.0
 scale = Vector2(1.14087, 0.915795)
 theme_override_fonts/font = ExtResource("7_nes8f")
